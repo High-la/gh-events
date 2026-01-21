@@ -3,7 +3,18 @@ on:
   pull_request:
     types:
       - opened
+    branches: 
+      - main
+      - 'dev-*' # dev- + any chars
+      - 'feat/**' # feat/ + any dir paths
   workflow_dispatch:
+  push:
+    branches: 
+      - main
+      - 'dev-*' # dev- + any chars
+      - 'feat/**' # feat/ + any dir paths
+    paths-ignore:
+      - '.github/workflows/*' # execute if files under .github/workflows/ not changed 
 jobs:
   deploy:
     runs-on: ubuntu-latest
