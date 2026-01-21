@@ -2,6 +2,7 @@ import { string } from 'prop-types';
 
 import './HelpBox.css';
 
+// Add comment to test skip workflow on push
 function HelpBox({ title, text }) {
   return (
     <article className="help-box">
